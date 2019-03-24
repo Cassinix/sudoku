@@ -1,7 +1,7 @@
 module.exports = function solveSudoku(matrix) {
 
   const isSoved = (matr) => {
-    return matr.every(elem => elem.every(element => element.valueOf() === 'Number'))
+    return matr.every(element => element.every(n => n !== 0))
   }
 
   const zeroesIndexes = (matrix) => {
@@ -71,7 +71,7 @@ module.exports = function solveSudoku(matrix) {
       for (let i = 0; i < 9; i++) {
         exeptions.delete(matrix[i][pj]);
       }
-      
+
     })
     return position.exept = exeptions;
   }
